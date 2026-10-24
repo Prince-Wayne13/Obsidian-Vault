@@ -1,0 +1,1 @@
+When using bridge circuits,we also need instrumentation amplifiers with large common-mode rejections that can provide high and equal input impedances.

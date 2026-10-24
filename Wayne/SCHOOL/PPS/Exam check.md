@@ -1,0 +1,4 @@
+- [ ] Units for every parameter must be checked 🛫 2026-10-05 📅 2026-10-31
+- [ ] TKnow the Parameters 🛫 2026-10-05 📅 2026-10-31
+- Studying Tip - Give An AI, he usually asks state and explain , so make gemini give the meaning of every parameter, then an explaination- hightlighting key words and memorise key words in the explanation
+- Always have a checklist breakdown of the subtopics 

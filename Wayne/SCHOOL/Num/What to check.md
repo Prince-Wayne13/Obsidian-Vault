@@ -1,0 +1,2 @@
+- [ ] Open newton-cotes
+- [ ] Romberg📅 2026-10-11 🔼 ➕ 2026-10-05 
