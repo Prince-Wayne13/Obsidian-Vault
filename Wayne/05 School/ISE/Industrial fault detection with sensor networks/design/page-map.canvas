@@ -1,0 +1,142 @@
+{
+ "nodes": [
+  {
+   "id": "p1",
+   "type": "text",
+   "x": 0,
+   "y": 200,
+   "width": 260,
+   "height": 110,
+   "text": "**1 Sign in**\n",
+   "color": "5"
+  },
+  {
+   "id": "p2",
+   "type": "text",
+   "x": 380,
+   "y": 80,
+   "width": 260,
+   "height": 110,
+   "text": "**2 Overview**\nOperator, Engineer, Administrator",
+   "color": "5"
+  },
+  {
+   "id": "p6",
+   "type": "text",
+   "x": 380,
+   "y": 400,
+   "width": 260,
+   "height": 110,
+   "text": "**6 Admin**\n",
+   "color": "3"
+  },
+  {
+   "id": "p4",
+   "type": "text",
+   "x": 760,
+   "y": -40,
+   "width": 260,
+   "height": 110,
+   "text": "**4 Machine detail**\n",
+   "color": "5"
+  },
+  {
+   "id": "p7",
+   "type": "text",
+   "x": 380,
+   "y": 640,
+   "width": 260,
+   "height": 110,
+   "text": "**7 Demo control panel**\n",
+   "color": "6"
+  },
+  {
+   "id": "p8",
+   "type": "text",
+   "x": 760,
+   "y": 640,
+   "width": 260,
+   "height": 110,
+   "text": "**8 Requirements tracker**\n",
+   "color": "6"
+  },
+  {
+   "id": "p3",
+   "type": "text",
+   "x": 380,
+   "y": -80,
+   "width": 260,
+   "height": 110,
+   "text": "**3 Machines list**\nOperator, Engineer",
+   "color": "5"
+  },
+  {
+   "id": "p5",
+   "type": "text",
+   "x": 760,
+   "y": 160,
+   "width": 260,
+   "height": 110,
+   "text": "**5 Settings**\nEveryone (limits: Engineer)",
+   "color": "5"
+  }
+ ],
+ "edges": [
+  {
+   "id": "e1",
+   "fromNode": "p1",
+   "fromSide": "right",
+   "toNode": "p2",
+   "toSide": "left"
+  },
+  {
+   "id": "e2",
+   "fromNode": "p1",
+   "fromSide": "right",
+   "toNode": "p6",
+   "toSide": "left"
+  },
+  {
+   "id": "e3",
+   "fromNode": "p2",
+   "fromSide": "right",
+   "toNode": "p4",
+   "toSide": "left"
+  },
+  {
+   "id": "e8",
+   "fromNode": "p4",
+   "fromSide": "right",
+   "toNode": "p5",
+   "toSide": "left"
+  },
+  {
+   "id": "e9",
+   "fromNode": "p2",
+   "fromSide": "top",
+   "toNode": "p3",
+   "toSide": "bottom"
+  },
+  {
+   "id": "e10",
+   "fromNode": "p3",
+   "fromSide": "right",
+   "toNode": "p4",
+   "toSide": "left"
+  },
+  {
+   "id": "e11",
+   "fromNode": "p2",
+   "fromSide": "right",
+   "toNode": "p5",
+   "toSide": "left"
+  },
+  {
+   "id": "e12",
+   "fromNode": "p6",
+   "fromSide": "top",
+   "toNode": "p2",
+   "toSide": "bottom"
+  }
+ ]
+}

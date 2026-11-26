@@ -1,0 +1,1 @@
+- [ ] Study Reluctance , hysteresis, Stepper, Brushless and Universal motors

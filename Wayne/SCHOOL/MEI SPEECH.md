@@ -1,0 +1,8 @@
+- **We become accustomed to problems**: We accept everyday challenges as normal instead of questioning how they could be improved.
+- **We look for inventions instead of problems**: We focus on what we can build with available technology rather than identifying a genuine need.
+- **We focus on big problems**: We overlook small, everyday challenges that could lead to valuable innovations.
+- **We don’t observe people dz enough**: We fail to identify challenges because we don’t pay attention to people’s daily struggles and experiences.
+- **We assume existing problems cannot be solved**: We accept long-standing challenges instead of exploring new approaches or improving existing  ways solutions.
+- **We don’t understand the users**: We develop solutions without understanding the actual needs, limitations, and experiences of the people facing the problem.
+- **We lack sufficient research**: We sometimes jump to conclusions without investigating the causes of a problem or evaluating existing solutions.
+- **We fear failure**: We may avoid exploring difficult problems because we are afraid our ideas will not work.
