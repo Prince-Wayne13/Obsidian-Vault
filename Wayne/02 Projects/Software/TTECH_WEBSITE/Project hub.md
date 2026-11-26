@@ -61,3 +61,8 @@ Automatic T-Tech Studio connection, online checkout, automatic messaging, compan
 ### 2026-11-25
 
 - Consolidated the project around the current SRS and an explicit launch checklist.
+# T-Tech Website
+
+## Design references
+
+- [[T-Tech Promotional Image Palette]]

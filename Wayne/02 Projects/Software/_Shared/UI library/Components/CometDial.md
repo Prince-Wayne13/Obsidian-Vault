@@ -1,4 +1,4 @@
-﻿---
+---
 type: ui-component
 name: CometDial
 status: raw
