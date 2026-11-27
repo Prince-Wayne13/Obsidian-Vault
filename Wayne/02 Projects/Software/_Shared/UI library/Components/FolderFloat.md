@@ -1,4 +1,4 @@
-﻿---
+---
 type: ui-component
 name: FolderFloat
 status: raw
@@ -9,7 +9,7 @@ depends-on: React; matter-js
 missing: none recorded
 ---
 # FolderFloat
-
+![[Pasted image 20261127074041.png]]
 ## Bundle
 - JavaScript: `_source/react-bits/FolderFloat.jsx`
 - CSS: `_source/react-bits/FolderFloat.css`

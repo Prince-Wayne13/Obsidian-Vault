@@ -2375,3 +2375,259 @@ Black	#000000	Slider background
 </svg></div><div class="w-richtext"><h3>Introduction to the Tetris Grid Layout</h3><p>The Tetris Grid Layout is a dynamic and innovative approach to web design that combines the versatility of traditional grid layouts with the playful, interlocking nature of the classic Tetris game. This layout allows elements to span multiple rows and columns, and even wrap around other elements, creating a visually engaging and highly customizable interface. Unlike standard grid systems, which often impose strict alignment and uniformity, the Tetris Grid Layout provides designers with the flexibility to create unique and compelling visual patterns that can adapt to various content types and screen sizes.</p><h1>‍</h1></div></div><div id="w-node-_7cc787ea-b9b6-ad8c-7360-31b52efaf189-91911199" class="col-2"><div class="code-embed-3 w-embed"><svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M0.100006 0H0V30H30V29.9998C13.4775 29.9459 0.100006 16.5352 0.100006 0Z" fill="white"></path>
 </svg></div><div class="w-richtext"><h3>Benefits of the Tetris Grid Layout</h3><p>One of the primary benefits of the Tetris Grid Layout is its ability to maximize space utilization while maintaining an aesthetically pleasing design. By allowing elements to interlock and wrap around each other, this layout minimizes whitespace and ensures that every pixel is used effectively. This is particularly useful for responsive design, as the layout can easily adapt to different screen sizes and orientations. Additionally, the Tetris Grid Layout enhances user engagement by creating a visually dynamic and interactive experience. The varied shapes and sizes of the elements can guide the user's eye through the content in a natural and intuitive manner.</p><h1>‍</h1></div></div><div id="w-node-baa35f90-57ea-e313-97aa-c213b41b7d6e-91911199" class="col-3"><div class="w-richtext"><h3>Implementing the Tetris Grid Layout</h3><p>Implementing the Tetris Grid Layout can be achieved using a combination of CSS Grid and custom JavaScript. CSS Grid provides the foundation for defining the layout structure, allowing elements to span multiple rows and columns. Custom JavaScript can then be used to dynamically adjust the placement and sizing of the elements, ensuring that they fit together seamlessly like Tetris pieces. This approach offers a high degree of flexibility and control, enabling designers to create complex and intricate layouts that would be difficult to achieve with traditional grid systems. The Tetris Grid Layout is an exciting and innovative tool for web designers looking to push the boundaries of modern web design.</p><h1>‍</h1></div></div></div></div></div></section><script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=6b0778415f5fcc629191114a" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script><script src="https://cdn.prod.website-files.com/6b0778415f5fcc629191114a/js/webflow.schunk.46469cbc9f839bdc.js" type="text/javascript" integrity="sha384-fvNoOsRhDXn8hFT+9Vs1T5TWxA5LZ5LNlU08pcBxdYFUMPBtY8GVCqm85UpuIqlh" crossorigin="anonymous"></script><script src="https://cdn.prod.website-files.com/6b0778415f5fcc629191114a/js/webflow.751e0867.148dc658e77a3916.js" type="text/javascript" integrity="sha384-gRsZCr5oM+8TIikTjp8mlQaxo339itgljbpHAoEYW6GgTyU0BumceR5934ES3MO8" crossorigin="anonymous"></script><a class="w-webflow-badge" href="https://webflow.com?utm_campaign=brandjs"><img src="https://d3e54v103j8qbb.cloudfront.net/img/webflow-badge-icon-d2.89e12c322e.svg" alt="" style="margin-right: 4px; width: 26px;"><img src="https://d3e54v103j8qbb.cloudfront.net/img/webflow-badge-text-d2.c82cec3b78.svg" alt="Made in Webflow"></a></body>
+
+.letter-glitch {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.letter-glitch-canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+'use client';
+
+import { useCallback, useEffect, useRef } from 'react';
+
+import './ScrollExpand.css';
+
+const clamp = (v, a, b) => (v < a ? a : v > b ? b : v);
+
+const smoothstep = (edge0, edge1, x) => {
+  const t = clamp((x - edge0) / (edge1 - edge0 || 1e-6), 0, 1);
+  return t * t * (3 - 2 * t);
+};
+
+const ScrollExpand = ({
+  src = '',
+  mediaType = 'image',
+  poster = '',
+  alt = '',
+  title = '',
+  scrollHint = '',
+  startWidth = 42,
+  startHeight = 58,
+  startRadius = 24,
+  endRadius = 0,
+  mediaZoom = 1.35,
+  scrollDistance = 1.2,
+  holdDistance = 0.35,
+  smoothing = 0.1,
+  overlayScrim = 0.45,
+  useWindowScroll = false,
+  enabled = true,
+  children,
+  className = '',
+  style,
+  ...rest
+}) => {
+  const rootRef = useRef(null);
+  const trackRef = useRef(null);
+  const stageRef = useRef(null);
+  const frameRef = useRef(null);
+  const mediaRef = useRef(null);
+  const titleRef = useRef(null);
+  const overlayRef = useRef(null);
+  const scrimRef = useRef(null);
+  const hintRef = useRef(null);
+
+  const propsRef = useRef({});
+  propsRef.current = {
+    startWidth,
+    startHeight,
+    startRadius,
+    endRadius,
+    mediaZoom,
+    scrollDistance,
+    holdDistance,
+    smoothing,
+    overlayScrim,
+    useWindowScroll,
+    enabled
+  };
+
+  const applyProgress = useCallback(p => {
+    const frame = frameRef.current;
+    const media = mediaRef.current;
+    if (!frame || !media) return;
+    const c = propsRef.current;
+
+    const e = smoothstep(0, 1, p);
+
+    const w = c.startWidth + (100 - c.startWidth) * e;
+    const h = c.startHeight + (100 - c.startHeight) * e;
+    const ix = Math.max(0, (100 - w) / 2);
+    const iy = Math.max(0, (100 - h) / 2);
+    const r = c.startRadius + (c.endRadius - c.startRadius) * e;
+    frame.style.clipPath = `inset(${iy}% ${ix}% ${iy}% ${ix}% round ${r}px)`;
+
+    media.style.transform = `scale(${c.mediaZoom + (1 - c.mediaZoom) * e})`;
+
+    if (scrimRef.current) scrimRef.current.style.opacity = `${c.overlayScrim * e}`;
+
+    if (titleRef.current) {
+      const out = smoothstep(0.4, 0.88, p);
+      titleRef.current.style.opacity = `${1 - out}`;
+      titleRef.current.style.transform = `translate3d(0, ${-28 * out}px, 0) scale(${1 + 0.06 * out})`;
+    }
+
+    if (hintRef.current) {
+      const gone = smoothstep(0, 0.12, p);
+      hintRef.current.style.opacity = `${1 - gone}`;
+      hintRef.current.style.transform = `translate3d(0, ${8 * gone}px, 0)`;
+    }
+
+    if (overlayRef.current) {
+      const inn = smoothstep(0.68, 1, p);
+      overlayRef.current.style.opacity = `${inn}`;
+      overlayRef.current.style.transform = `translate3d(0, ${18 * (1 - inn)}px, 0)`;
+    }
+  }, []);
+
+  useEffect(() => {
+    const root = rootRef.current;
+    const track = trackRef.current;
+    const stage = stageRef.current;
+    if (!root || !track || !stage) return;
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    let raf = 0;
+    let current = 0;
+    let target = 0;
+    let stageH = 0;
+    let running = false;
+
+    const measure = () => {
+      const c = propsRef.current;
+      stageH = c.useWindowScroll ? window.innerHeight : root.clientHeight;
+      if (stageH <= 0) return;
+      stage.style.height = `${stageH}px`;
+      track.style.height = `${stageH * (1 + Math.max(0, c.scrollDistance) + Math.max(0, c.holdDistance))}px`;
+
+      const w = root.clientWidth || stageH;
+      stage.style.setProperty('--se-title-size', `${clamp(w * 0.075, 20, 84)}px`);
+    };
+
+    const readProgress = () => {
+      const c = propsRef.current;
+      if (!c.enabled) return 1;
+      const span = stageH * Math.max(0.01, c.scrollDistance);
+      if (c.useWindowScroll) {
+        const top = track.getBoundingClientRect().top;
+        return clamp(-top / span, 0, 1);
+      }
+      return clamp(root.scrollTop / span, 0, 1);
+    };
+
+    const tick = () => {
+      const c = propsRef.current;
+      const k = c.smoothing <= 0 ? 1 : 1 - Math.exp(-1 / (60 * c.smoothing));
+      current += (target - current) * k;
+      if (Math.abs(target - current) < 0.0004) {
+        current = target;
+        running = false;
+      }
+      applyProgress(current);
+      raf = running ? requestAnimationFrame(tick) : 0;
+    };
+
+    const kick = () => {
+      if (running) return;
+      running = true;
+      if (!raf) raf = requestAnimationFrame(tick);
+    };
+
+    const onScroll = () => {
+      target = readProgress();
+      if (propsRef.current.smoothing <= 0 || reduceMotion) {
+        current = target;
+        applyProgress(current);
+        return;
+      }
+      kick();
+    };
+
+    const onResize = () => {
+      measure();
+      target = readProgress();
+      current = target;
+      applyProgress(current);
+    };
+
+    measure();
+    target = readProgress();
+    current = target;
+    applyProgress(current);
+
+    const scroller = useWindowScroll ? window : root;
+    scroller.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onResize);
+    const ro = new ResizeObserver(onResize);
+    ro.observe(root);
+
+    return () => {
+      if (raf) cancelAnimationFrame(raf);
+      scroller.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onResize);
+      ro.disconnect();
+    };
+  }, [applyProgress, useWindowScroll]);
+
+  const media =
+    mediaType === 'video' ? (
+      <video
+        ref={mediaRef}
+        className="scroll-expand__media"
+        src={src}
+        poster={poster}
+        autoPlay
+        muted
+        loop
+        playsInline
+      />
+    ) : (
+      <img ref={mediaRef} className="scroll-expand__media" src={src} alt={alt} draggable={false} />
+    );
+
+  return (
+    <div
+      ref={rootRef}
+      className={`scroll-expand ${useWindowScroll ? '' : 'scroll-expand--scroller'} ${className}`.trim()}
+      style={style}
+      {...rest}
+    >
+      <div ref={trackRef} className="scroll-expand__track">
+        <div ref={stageRef} className="scroll-expand__stage">
+          <div ref={frameRef} className="scroll-expand__frame">
+            {media}
+            <div ref={scrimRef} className="scroll-expand__scrim" />
+            {children ? (
+              <div ref={overlayRef} className="scroll-expand__overlay">
+                {children}
+              </div>
+            ) : null}
+          </div>
+          {title ? (
+            <div ref={titleRef} className="scroll-expand__title">
+              {title}
+            </div>
+          ) : null}
+          {scrollHint ? (
+            <div ref={hintRef} className="scroll-expand__hint">
+              {scrollHint}
+            </div>
+          ) : null}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ScrollExpand;
+

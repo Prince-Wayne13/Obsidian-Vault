@@ -1,4 +1,4 @@
-﻿---
+---
 type: ui-component
 name: GlowCursor
 status: raw
@@ -9,7 +9,7 @@ depends-on: React
 missing: none recorded
 ---
 # GlowCursor
-
+![[Pasted image 20261127074124.png]]
 ## Bundle
 - JavaScript: `_source/react-bits/GlowCursor.jsx`
 - CSS: `_source/react-bits/GlowCursor.css`

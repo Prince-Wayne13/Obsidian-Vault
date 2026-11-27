@@ -4,7 +4,7 @@ Date: 10 October 2026 Prepared by: Prince Msowoya
 
 This note collects everything decided since the requirements document (version 3.1). It replaces the earlier version of this summary. Your answers and my suggestions are now all included as decisions. Things that are still open are in section 5.
 
-Related notes: [[00 Page map]], [[01 Quote journey]], [[02 Customer screens]].
+Related notes: [[02 Projects/Software/TTECH_WEBSITE/Design/00 page map]], [[01 quote journey]], [[02 customer screens]].
 
 ---
 
@@ -118,7 +118,7 @@ When you say go, I will update the requirements document with these:
 
 - The questions for each of the five launch products. Galf and Victor should correct my drafts.
 - The date for photos of past work for the slideshow.
-- Which tags should My quotes and My orders show, and is the first list in [[02 Customer screens]] right?
+- Which tags should My quotes and My orders show, and is the first list in [[02 customer screens]] right?
 - Who in the shop answers the Messages, and how fast should the customer expect a reply?
 - The open items from section 16 of the requirements document still apply, including the launch date (1 March 2027 or 1 January), who needs a login and training, backups, the budget, the refund process, and who works out transport costs.
 
@@ -126,7 +126,15 @@ When you say go, I will update the requirements document with these:
 
 ## 6. Suggested next steps
 
-1. Check the drawings in [[02 Customer screens]] and tell me what is wrong.
+1. Check the drawings in [[02 customer screens]] and tell me what is wrong.
 2. Make rough sketches of the quote form and each customer screen.
 3. Show the sketches to Galf and Victor.
 4. Update the requirements document to version 3.2.
+
+---
+
+## 7. Font library and pairings
+
+Moved to [[02 Projects/Software/_Shared/UI library/Tokens/Design tokens]].
+
+(See the tokens file for the full font library and pairings.)

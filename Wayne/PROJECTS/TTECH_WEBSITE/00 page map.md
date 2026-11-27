@@ -27,7 +27,7 @@ _Tip: these drawings use a white background. Use Obsidian's light theme, or the 
         - [[My orders]]
             - [[One order]]
 
-_"One order" is the Order Tracking page from the requirements document. See [[02 Customer screens]] for how these screens connect._
+_"One order" is the Order Tracking page from the requirements document. See [[02 customer screens]] for how these screens connect._
 
 ## Drawing
 

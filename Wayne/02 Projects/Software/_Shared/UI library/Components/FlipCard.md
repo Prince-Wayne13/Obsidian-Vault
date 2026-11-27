@@ -1,4 +1,4 @@
-﻿---
+---
 type: ui-component
 name: FlipCard
 status: raw
@@ -9,7 +9,7 @@ depends-on: React; motion
 missing: none recorded
 ---
 # FlipCard
-
+![[Pasted image 20261127073848.png]]
 ## Bundle
 - JavaScript: `_source/react-bits/FlipCard.jsx`
 - CSS: `_source/react-bits/FlipCard.css`

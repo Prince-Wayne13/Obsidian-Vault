@@ -22,6 +22,9 @@ Potentially useful as a feedback, onboarding, form, or multi-step workflow patte
 ## Dependencies
 next/image; @/lib/utils; @/components/ui/button; @/components/ui/input; @/components/ui/label; @/components/ui/select; @/components/ui/textarea; @/components/ui/expandable-screen
 
+## Install
+No `npm` or `npx` install command was supplied with this dump-derived component. Its imported `@/components/ui/...` primitives must already exist in the target project.
+
 ## Missing files
 @/lib/utils; @/components/ui/button; @/components/ui/input; @/components/ui/label; @/components/ui/select; @/components/ui/textarea; @/components/ui/expandable-screen
 

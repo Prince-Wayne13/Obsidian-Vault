@@ -1,4 +1,4 @@
-﻿---
+---
 type: ui-component
 name: BranchedMenu
 status: raw
@@ -9,6 +9,7 @@ depends-on: React; @hugeicons/react; @hugeicons/core-free-icons
 missing: none recorded
 ---
 # BranchedMenu
+![[Pasted image 20261127073441.png]]
 
 ## Bundle
 - JavaScript: `_source/react-bits/BranchedMenu.jsx`

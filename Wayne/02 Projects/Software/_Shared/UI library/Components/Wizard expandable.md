@@ -1,4 +1,4 @@
-﻿---
+---
 type: ui-component
 name: Wizard expandable
 status: raw

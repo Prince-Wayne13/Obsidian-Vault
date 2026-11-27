@@ -1,4 +1,4 @@
-﻿---
+---
 type: ui-component
 name: DepthCarousel
 status: raw
@@ -9,7 +9,7 @@ depends-on: React; gsap
 missing: none recorded
 ---
 # DepthCarousel
-
+![[Pasted image 20261127073604.png]]
 ## Bundle
 - JavaScript: `_source/react-bits/DepthCarousel.jsx`
 - CSS: `_source/react-bits/DepthCarousel.css`

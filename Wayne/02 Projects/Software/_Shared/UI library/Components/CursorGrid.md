@@ -1,4 +1,4 @@
-﻿---
+---
 type: ui-component
 name: CursorGrid
 status: raw
@@ -9,7 +9,7 @@ depends-on: React
 missing: none recorded
 ---
 # CursorGrid
-
+![[Pasted image 20261127073530.png]]
 ## Bundle
 - JavaScript: `_source/react-bits/CursorGrid.jsx`
 - CSS: `_source/react-bits/CursorGrid.css`

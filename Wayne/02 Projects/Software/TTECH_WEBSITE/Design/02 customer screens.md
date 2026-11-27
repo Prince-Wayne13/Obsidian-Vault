@@ -6,7 +6,7 @@ How a signed-in customer moves around. Each arrow says what the customer presses
 
 _Tip: these drawings use a white background. Use Obsidian's light theme, or the lines may be hard to see in dark mode._
 
-Part of [[00 Page map]].
+Part of [[02 Projects/Software/TTECH_WEBSITE/Design/00 page map]].
 
 ## 1. Moving between screens
 

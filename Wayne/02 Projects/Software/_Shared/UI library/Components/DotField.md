@@ -1,4 +1,4 @@
-﻿---
+---
 type: ui-component
 name: DotField
 status: raw
@@ -9,7 +9,7 @@ depends-on: React
 missing: none recorded
 ---
 # DotField
-
+![[Pasted image 20261127073619.png]]
 ## Bundle
 - JavaScript: `_source/react-bits/DotField.jsx`
 - CSS: `_source/react-bits/DotField.css`

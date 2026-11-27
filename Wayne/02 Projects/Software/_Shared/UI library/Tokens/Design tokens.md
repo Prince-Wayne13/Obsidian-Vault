@@ -51,6 +51,11 @@ No palette is chosen. Fuel status values are reserved and must not be overridden
 - Fuel style scale: hero 40px, heading 24px, subheading 18px, body 16px, small 13px; source [[Fuel style]].
 - Crimson Text, DM Sans, Roboto Mono, Lora, and Montserrat are retained as collected candidates; no family is selected.
 
+### Font library and pairings (T-Tech candidates)
+Clean sans-serif shortlist: Plus Jakarta Sans, IBM Plex Sans, Public Sans, Source Sans 3.
+Display/serif: Noto Serif Display, Fraunces, Butler (Font Squirrel), Playfair Display (thin/light, ALL CAPS, wider tracking).
+Pairings: Playfair Display + Source Sans 3; Poppins + Lora; Montserrat + Charter; Crimson Text/Pro + Oxygen; Satisfy + Libre Baskerville; Butler + Roboto; Casual (Caveat/DM Sans) + Jost; Noah + Georgia.
+
 ## Shape, spacing, and motion
 
 - Spacing candidates: 4px base from Midday and current UI style; 8px base from Alden.

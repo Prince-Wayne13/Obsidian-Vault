@@ -9,7 +9,7 @@ depends-on: React; motion
 missing: none recorded
 ---
 # CometDial
-
+![[Pasted image 20261127073500.png]]
 ## Bundle
 - JavaScript: `_source/react-bits/CometDial.jsx`
 - CSS: `_source/react-bits/CometDial.css`
